@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const dbURI = process.env.MONGOLAB_URI || 'mongodb://localhost/meanAuth'
 
+console.log(dbURI);
+
 mongoose.connect(dbURI);
 
 // CONNECTION EVENTS
