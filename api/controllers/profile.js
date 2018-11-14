@@ -9,8 +9,8 @@ module.exports.GetUser = (req, res) => {
         });
     } else {
         User.findById(req.payload._id).then(record => {
-            if (record) {
-                res.status(200).json(user);
+            if (record._doc.name.length > 0) {
+                res.status(200).json(record);
             } else {
                 res.status(400).json( {"message": "No user found by payload id"});
             }
